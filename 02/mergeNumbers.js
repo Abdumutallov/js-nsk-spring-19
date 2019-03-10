@@ -14,11 +14,8 @@
 export function mergeNumbers(number) {
   let neWnumber = number;
 
-  // eslint-disable-next-line no-eval
-  neWnumber = eval(
-    String(neWnumber)
-      .split('')
-      .join('+')
-  );
+  neWnumber = String(neWnumber)
+    .split('')
+    .reduce((sum, current) => sum + +current, 0);
   return neWnumber > 10 ? mergeNumbers(neWnumber) : neWnumber;
 }
