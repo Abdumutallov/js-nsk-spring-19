@@ -12,14 +12,8 @@
  * @return {Set<any>} массив уникальных значений, отсортированный по возрастанию
  */
 export function getUnique(input) {
-  const obj = {};
+  const arr = [];
 
-  // eslint-disable-next-line no-return-assign
-  input.map((item, i) => (obj[item] = true));
-
-  const arr = Object.keys(obj)
-    .map(i => +i)
-    .sort();
-
+  input.sort().reduce((pv, item, i) => (item === input[i + 1] ? '' : arr.push(item)));
   return arr;
 }
