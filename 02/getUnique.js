@@ -12,4 +12,8 @@
  * @return {Set<any>} массив уникальных значений, отсортированный по возрастанию
  */
 export function getUnique(input) {
+  const arr = [];
+
+  input.sort().reduce((pv, item, i) => (item === input[i + 1] ? '' : arr.push(item)));
+  return arr;
 }

@@ -12,4 +12,10 @@
  * @param number
  */
 export function mergeNumbers(number) {
+  let neWnumber = number;
+
+  neWnumber = String(neWnumber)
+    .split('')
+    .reduce((sum, current) => sum + +current, 0);
+  return neWnumber > 10 ? mergeNumbers(neWnumber) : neWnumber;
 }

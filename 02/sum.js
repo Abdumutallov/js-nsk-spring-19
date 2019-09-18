@@ -12,4 +12,11 @@
  * @returns а это уже сами решите
  */
 export function sum(x) {
+  return x === undefined ?
+    0 :
+    function f(y) {
+      // eslint-disable-next-line no-unused-expressions
+      y !== undefined ? (x += y) : '';
+      return y === undefined ? x : f;
+    };
 }

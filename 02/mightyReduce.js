@@ -12,6 +12,9 @@
  * @param {*[]}      input массив значений
  */
 export function reduceMap(fn, input) {
+  // eslint-disable-next-line no-return-assign
+  input.reduce((pv, x, i) => (input[i] = fn(x)), 0);
+  return input;
 }
 
 /**
@@ -25,4 +28,8 @@ export function reduceMap(fn, input) {
  * @param {*[]}      input массив значений
  */
 export function reduceFilter(fn, input) {
+  const arr = [];
+
+  input.reduce((pv, x) => (fn(x) ? arr.push(x) : undefined), 0);
+  return arr;
 }

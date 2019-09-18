@@ -10,4 +10,15 @@
  * @param {String} str - initial value
  */
 export class NumberAndString {
+  constructor(x) {
+    this.str = x;
+  }
+
+  toString() {
+    return this.str;
+  }
+
+  valueOf() {
+    return this.str.length;
+  }
 }
